@@ -1,0 +1,30 @@
+@baseUrl = http://localhost:8080
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyNTJmZjJhLWM0YzQtNDMyYS05NjI4LWYyM2M0NmYyMjg4YyIsImFkbWluIjpmYWxzZSwic3ViQWRtaW4iOmZhbHNlLCJpYXQiOjE3NDkyNTMwODIsImV4cCI6MTc0OTMzOTQ4Mn0.V5yR8NIdh6w7SyMGgqArGI7NpTaKI9fUBs2FIlfxEJg
+
+
+### Criar usuario
+POST {{baseUrl}}/register
+Content-Type: application/json
+
+{
+  "nick": "usuario987880",
+  "name": "Lucas",
+  "surname": "Neto",
+  "email": "lucas.088silva@email.com",
+  "senha": "senhaSegura123",
+  "instituicao": 1
+}
+
+### Login usuario
+POST {{baseUrl}}/login
+Content-Type: application/json
+
+{
+  "email": "lucas.088silva@email.com",
+  "password": "senhaSegura123"
+}
+
+### Buscar usuario 
+GET {{baseUrl}}/user/profile
+Content-Type: application/json
+Authorization: Bearer {{token}}

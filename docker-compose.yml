@@ -1,0 +1,10 @@
+services:
+  db:
+    image: mysql
+    container_name: projetoRecodeBanco
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: projeto_recode 
+    ports:
+      - "3306:3306"
+    restart: unless-stopped

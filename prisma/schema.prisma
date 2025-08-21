@@ -1,0 +1,187 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+//Definindo o banco
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+//Definindo o Model de User
+model User {
+  id                     String             @id @default(uuid())
+  createdAt              DateTime           @default(now())
+  userName               String             @unique
+  nivelId                Int
+  nivel                  Nivel              @relation(fields: [nivelId], references: [id])
+  primNome               String             @db.VarChar(30)
+  sobreNome              String             @db.VarChar(255)
+  email                  String             @unique
+  password               String
+  admin                  Boolean            @default(false)
+  subAdmin               Boolean            @default(false)
+  institutionId          Int
+  institution            Institution        @relation(fields: [institutionId], references: [id])
+  gerenciaAdminAtribuiu  GerenciaAdmin[]    @relation("UserAtribuiuGerenciaAdmin")
+  gerenciaAdminAtribuido GerenciaAdmin[]    @relation("UserAtribuidoGerenciaAdmin")
+  manipulaPorto          ManipulaPorto[]
+  acessaPorto            AcessaPorto[]
+  respostaPergunta       RespostaPergunta[]
+
+  @@map("user")
+}
+
+//Definindo o Model de Instituição
+model Institution {
+  id    Int    @id @default(autoincrement())
+  nome  String @unique @db.VarChar(255)
+  sigla String @unique @db.VarChar(10)
+  user  User[]
+
+  @@map("institution")
+}
+
+//Definindo Model de Gerencia dos Administradores
+model GerenciaAdmin {
+  id              Int      @id @default(autoincrement())
+  userAtribuiuId  String
+  userAtribuidoId String
+  userAtribuiu    User     @relation("UserAtribuiuGerenciaAdmin", fields: [userAtribuiuId], references: [id])
+  user            User     @relation("UserAtribuidoGerenciaAdmin", fields: [userAtribuidoId], references: [id])
+  acao            String   @db.Text
+  dateAtribui     DateTime @default(now())
+  dateAtualizacao DateTime @default(now())
+
+  @@map("gerenciaadmin")
+}
+
+//Definindo o Model de Porto
+model Porto {
+  id            Int             @id @default(autoincrement())
+  createdAt     DateTime        @default(now())
+  updatedAt     DateTime        @default(now())
+  nome          String          @db.VarChar(255)
+  descricao     String          @db.Text
+  publicado     Boolean         @default(false)
+  dificuldadeId Int
+  dificuldade   Nivel           @relation(fields: [dificuldadeId], references: [id])
+  predecessorId Int?
+  predecessor   Porto?          @relation("porto", fields: [predecessorId], references: [id])
+  sucessor      Porto[]         @relation("porto")
+  perguntas     Pergunta[]
+  manipulaPorto ManipulaPorto[]
+  acessaPorto   AcessaPorto[]
+
+  @@map("porto")
+}
+
+//Definindo Model de Manipulação de Porto
+model ManipulaPorto {
+  id              Int      @id @default(autoincrement())
+  idAdmin         String
+  admin           User     @relation(fields: [idAdmin], references: [id])
+  portoId         Int
+  porto           Porto    @relation(fields: [portoId], references: [id], onDelete: Cascade)
+  acao            String   @db.Text
+  dataCadastro    DateTime @default(now())
+  dataAtualizacao DateTime @default(now())
+
+  @@map("manipulaporto")
+}
+
+//Definindo Model de Nivel
+model Nivel {
+  id        Int     @id @default(autoincrement())
+  descricao String  @db.VarChar(255)
+  user      User[]
+  porto     Porto[]
+
+  @@map("nivel")
+}
+
+//Definindo Model Acessa Porto
+model AcessaPorto {
+  id               Int                @id @default(autoincrement())
+  portoId          Int
+  porto            Porto              @relation(fields: [portoId], references: [id])
+  userId           String
+  user             User               @relation(fields: [userId], references: [id])
+  perguntaAtualId  Int
+  pergunta         Pergunta           @relation(fields: [perguntaAtualId], references: [id], onDelete: Cascade)
+  respostaPergunta RespostaPergunta[]
+  estadoPortoId    Int
+  estadoPorto      EstadoPorto?       @relation(fields: [estadoPortoId], references: [id])
+
+  @@map("acessaporto")
+}
+
+//Definindo Model Estado Porto
+model EstadoPorto {
+  id          Int           @id @default(autoincrement())
+  descricao   String        @db.VarChar(255)
+  acessaPorto AcessaPorto[]
+
+  @@map("estadoporto")
+}
+
+//Definindo o Model de Pergunta
+model Pergunta {
+  id                    Int                @id @default(autoincrement())
+  portoId               Int
+  porto                 Porto              @relation(fields: [portoId], references: [id])
+  descricao             String             @db.Text
+  predecessorId         Int?               @unique
+  predecessor           Pergunta?          @relation("pergunta", fields: [predecessorId], references: [id])
+  sucessor              Pergunta?          @relation("pergunta")
+  imagem                Bytes?
+  multiplasAlternativas Boolean            
+  alternativas          Alternativa[]      @relation("Alternativas")
+  acessoPorto           AcessaPorto[]
+  RespostaPergunta      RespostaPergunta[]
+
+  @@map("pergunta")
+}
+
+//Definindo o Model de Alternativa
+model Alternativa {
+  id               Int                @id @default(autoincrement())
+  perguntaId       Int
+  pergunta         Pergunta           @relation("Alternativas", fields: [perguntaId], references: [id])
+  descricao        String?            @db.Text
+  imagem           Bytes?
+  correta          Boolean            
+  alternativaMarcada AlternativaMarcada[]
+
+  @@map("alternativa")
+}
+
+//Definindo Model Resposta Pergunta
+model RespostaPergunta {
+  id                   Int         @id @default(autoincrement())
+  userId               String
+  user                 User        @relation(fields: [userId], references: [id])
+  acessoPortoId        Int
+  acessoPorto          AcessaPorto @relation(fields: [acessoPortoId], references: [id], onDelete: Cascade)
+  PerguntaId           Int
+  Pergunta             Pergunta    @relation(fields: [PerguntaId], references: [id], onDelete: Cascade)
+  acertou              Boolean
+  dataResposta         DateTime    @default(now())
+  alternativaMarcada  AlternativaMarcada[]
+
+  @@map("respostapergunta")
+}
+
+//Definindo Model Resposta Pergunta
+model AlternativaMarcada {
+  id                   Int         @id @default(autoincrement())
+  respostaPerguntaId   Int
+  respostaPergunta     RespostaPergunta @relation(fields: [respostaPerguntaId], references: [id])
+  alternativaMarcadaId Int
+  alternativaMarcada   Alternativa @relation(fields: [alternativaMarcadaId], references: [id], onDelete: Cascade)
+
+  @@map("alternativaMarcada")
+}
