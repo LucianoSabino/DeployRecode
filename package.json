@@ -18,7 +18,8 @@
   "scripts": {
     "start": "node src/index.js",
     "createDB": "npx prisma migrate dev --name init",
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon src/index.js",
+    "build": "prisma generate"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
