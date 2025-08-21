@@ -13,13 +13,14 @@
     "mysql2": "^3.2.1",
     "nodemailer": "^6.9.3",
     "pdfkit": "^0.15.0",
-    "prisma": "^5.19.0"
+    "prisma": "^5.22.0"
   },
   "scripts": {
     "start": "node src/index.js",
     "createDB": "npx prisma migrate dev --name init",
     "dev": "nodemon src/index.js",
-    "build": "prisma generate"
+    "build": "npx prisma generate",
+    "postinstall": "npx prisma generate"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
