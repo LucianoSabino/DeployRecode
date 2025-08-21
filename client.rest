@@ -1,13 +1,16 @@
-@baseUrl = http://localhost:8080
+@baseUrl = deploy-recode.vercel.app
+###http://localhost:8080
 @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyNTJmZjJhLWM0YzQtNDMyYS05NjI4LWYyM2M0NmYyMjg4YyIsImFkbWluIjpmYWxzZSwic3ViQWRtaW4iOmZhbHNlLCJpYXQiOjE3NDkyNTMwODIsImV4cCI6MTc0OTMzOTQ4Mn0.V5yR8NIdh6w7SyMGgqArGI7NpTaKI9fUBs2FIlfxEJg
 
+###Rota de teste
+GET {{baseUrl}}/
 
 ### Criar usuario
 POST {{baseUrl}}/register
 Content-Type: application/json
 
 {
-  "nick": "usuario987880",
+  "nick": "usuario9878800",
   "name": "Lucas",
   "surname": "Neto",
   "email": "lucas.088silva@email.com",

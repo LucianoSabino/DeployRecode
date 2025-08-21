@@ -16,9 +16,9 @@
     "prisma": "^5.19.0"
   },
   "scripts": {
-    "start": "node index.js",
+    "start": "node src/index.js",
     "createDB": "npx prisma migrate dev --name init",
-    "dev": "nodemon index.js"
+    "dev": "nodemon src/index.js"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
