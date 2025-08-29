@@ -1,6 +1,6 @@
 @baseUrl = deploy-recode.vercel.app
 ###http://localhost:8080
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMyNTJmZjJhLWM0YzQtNDMyYS05NjI4LWYyM2M0NmYyMjg4YyIsImFkbWluIjpmYWxzZSwic3ViQWRtaW4iOmZhbHNlLCJpYXQiOjE3NDkyNTMwODIsImV4cCI6MTc0OTMzOTQ4Mn0.V5yR8NIdh6w7SyMGgqArGI7NpTaKI9fUBs2FIlfxEJg
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAwOTgwNjJlLWMxNmYtNGQxYi05YTlkLTc1OGIwYTIzMjNkZSIsImFkbWluIjp0cnVlLCJzdWJBZG1pbiI6ZmFsc2UsImlhdCI6MTc1NjQzNDY0NywiZXhwIjoxNzU2NTIxMDQ3fQ.Unski6Yn8j6qOo-kR7IqG_3p3NBsMZFnfVh1iTFFaqQ
 
 ###Rota de teste
 GET {{baseUrl}}/
@@ -23,11 +23,17 @@ POST {{baseUrl}}/login
 Content-Type: application/json
 
 {
-  "email": "lucas.088silva@email.com",
-  "password": "senhaSegura123"
+  "email": "gabriela@edu.ufrgs.com.br",
+  "password": "admin12345"
 }
 
 ### Buscar usuario 
 GET {{baseUrl}}/user/profile
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+
+### Teste de rota de porto
+GET {{baseUrl}}/user/pendingport
 Content-Type: application/json
 Authorization: Bearer {{token}}
