@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 module.exports = {
   //Devolve a lista de Portos cadastrados no sistema
   async getPorts(req, res) {
-    let userId = req.data.id;
+    let userId = req.user.id;
 
     //Pegando o nivel do usuario requisitante
     let nivelUser = await prisma.user.findUnique({
@@ -144,7 +144,7 @@ module.exports = {
   },
   //Responder um Porto
   async onGoingPort(req, res) {
-    let userId = req.data.id;
+    let userId = req.user.id;
 
     //Verifico se o user tentando inicializar um porto já possui um inicializado
     await prisma.acessaPorto
