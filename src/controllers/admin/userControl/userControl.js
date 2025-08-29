@@ -112,11 +112,12 @@ module.exports = {
         .then(async (user) => {
           if (user !== null || user !== undefined) {
             let respAcessaPortos = await prisma.$queryRaw`
-                    select distinct a.id, p.nome, p.dificuldadeId, e.descricao  from acessaporto a 
-                    inner join porto p on p.id = a.portoId 
-                    inner join estadoporto e on e.id = a.estadoPortoId  
-                    where a.estadoPortoId != 1 and a.userId = ${user.id}
-                 `;
+  select distinct a.id, p.nome, p."dificuldadeId", e.descricao  
+  from acessaporto a 
+  inner join porto p on p.id = a."portoId"
+  inner join estadoporto e on e.id = a."estadoPortoId"
+  where a."estadoPortoId" != 1 and a."userId" = ${user.id}
+`;
 
             const userAlterador = await prisma.user.findUnique({
               where: {
