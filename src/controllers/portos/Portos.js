@@ -85,14 +85,13 @@ module.exports = {
     }
     //PASSANDO os Portos que dependem de Encadeamento de Outro Porto
     let portosEncadeados = await prisma.$queryRaw`
-  select distinct p.id, p.nome, p.descricao, n.id as dificuldadeId, p.publicado 
-  from porto p 
-  inner join acessaporto a on a.porto_id = p.predecessor_id 
-  inner join estadoporto e on e.id = a.estado_porto_id 
-  inner join nivel n on n.id = p.dificuldade_id 
-  inner join "user" u on a.user_id = ${userId}
-  where e.descricao = 'Passou' and u.nivel_id >= p.dificuldade_id
-`;
+            select distinct p.id, p.nome, p.descricao, n.id as dificuldadeid, p.publicado from porto p 
+            inner join acessaporto a on a.portoid = p.predecessorid 
+            inner join estadoporto e on e.id = a.estadoPortoid 
+            inner join nivel n on n.id = p.dificuldadeid 
+            inner join user u on a.userid = ${userId}
+            where e.descricao = 'Passou' and u.nivelid >= p.dificuldadeid 
+        `;
 
     if (portosEncadeados.length != 0 && portosEncadeados) {
       portos.push(...portosEncadeados);
