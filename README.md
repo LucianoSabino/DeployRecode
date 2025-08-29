@@ -1,6 +1,6 @@
-Link do projeto em deploy:
+Link do projeto em deploy: https://deploy-recode.vercel.app
 
 Conta para fazer login:
 
-    conta: gabriela@edu.ufrgs.com.br
-    senha: admin12345
+    conta: backend@gmail.com
+    senha: b123456789
