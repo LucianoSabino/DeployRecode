@@ -363,6 +363,27 @@ module.exports = {
                           res.status(500).json("Erro Interno do Servidor");
                         });
                     }
+                    async function registra(
+                      acessaPortoId,
+                      perguntasCertas,
+                      porcentagem,
+                      userId
+                    ) {
+                      return await prisma.informacaoPortoRespondido.create({
+                        data: {
+                          acessaPortoId,
+                          numAcertos: perguntasCertas, // nome certo do campo
+                          porcentagem,
+                          userId,
+                        },
+                      });
+                    }
+                    await registra(
+                      acessaPortoId,
+                      numAcertos,
+                      porcentagem,
+                      userId
+                    );
                     res.status(201).json({
                       conclusao: "Concluido",
                       numAcertos: perguntasCertas,
@@ -406,5 +427,28 @@ module.exports = {
     } else {
       res.status(404).json("Informações Inválidas");
     }
+  },
+  async historico(req, res) {
+    let userId = req.user.id;
+
+    await prisma.informacaoPortoRespondido
+      .findMany({
+        where: {
+          userId,
+        },
+        select: {
+          id: true,
+          numAcertos: true,
+          porcentagem: true,
+          createdAt: true,
+        },
+      })
+      .then((historico) => {
+        res.status(200).json(historico);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).json("Erro Interno do Servidor");
+      });
   },
 };

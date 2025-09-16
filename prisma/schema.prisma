@@ -31,6 +31,7 @@ model User {
   manipulaPorto          ManipulaPorto[]
   acessaPorto            AcessaPorto[]
   respostaPergunta       RespostaPergunta[]
+  informacaoPortoRespondido informacaoPortoRespondido[] 
 
   @@map("user")
 }
@@ -184,4 +185,16 @@ model AlternativaMarcada {
   alternativaMarcada   Alternativa @relation(fields: [alternativaMarcadaId], references: [id], onDelete: Cascade)
 
   @@map("alternativaMarcada")
+}
+
+model informacaoPortoRespondido {
+  id        Int      @id @default(autoincrement())
+  acessaPortoId Int 
+  perguntasCertas Float
+  porcentagem Float
+
+  userId String 
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("informacaoPortoRespondido")
 }
