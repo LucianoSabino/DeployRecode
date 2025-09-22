@@ -10,7 +10,8 @@ const portos = [
       {
         descricao:
           "O jogador deve selecionar a amostra, sendo ela apenas os animais marinhos distribuídos junto com outros animais (total de 9). Deve clicar fazendo a correspondência ao que se pede.",
-        imagem: "./imagens_das_perguntas/PortoIniciandoAventura/Pergunta1/Imagem1.png",
+        imagem:
+          "./imagens_das_perguntas/PortoIniciandoAventura/Pergunta1/Imagem1.png",
         multiplasAlternativas: true,
         respostas: [
           {
@@ -73,7 +74,8 @@ const portos = [
       {
         descricao:
           "O jogador deve quantificar a escolha anterior, comparando o total de animais selecionados aos números dispostos, clicando na alternativa correta.",
-        imagem: "./imagens_das_perguntas/PortoIniciandoAventura/Pergunta2/Imagem1.png",
+        imagem:
+          "./imagens_das_perguntas/PortoIniciandoAventura/Pergunta2/Imagem1.png",
         multiplasAlternativas: false,
         respostas: [
           {
@@ -97,7 +99,8 @@ const portos = [
       {
         descricao:
           "De acordo com os animais apresentados anteriormente o jogador deve observar suas características para responder, qual animal é maior? (Uma tartaruga e uma baleia)",
-        imagem: "./imagens_das_perguntas/PortoIniciandoAventura/Pergunta3/Imagem1.png",
+        imagem:
+          "./imagens_das_perguntas/PortoIniciandoAventura/Pergunta3/Imagem1.png",
         multiplasAlternativas: false,
         respostas: [
           {
@@ -118,7 +121,8 @@ const portos = [
       {
         descricao:
           "O jogador deve selecionar apenas os animais marinhos respondendo quais animais apresentam a cor azul dentre os animais coloridos que estão distribuídos de forma aleatória.",
-        imagem: "./imagens_das_perguntas/PortoIniciandoAventura/Pergunta4/Imagem1.png",
+        imagem:
+          "./imagens_das_perguntas/PortoIniciandoAventura/Pergunta4/Imagem1.png",
         multiplasAlternativas: true,
         respostas: [
           {
@@ -211,7 +215,8 @@ const portos = [
       {
         descricao:
           "O jogador deve observar de dois a três polvos, e contar seus tentáculos respondendo qual deles possui menos tentáculos?",
-        imagem: "./imagens_das_perguntas/PortoIniciandoAventura/Pergunta5/Imagem1.png",
+        imagem:
+          "./imagens_das_perguntas/PortoIniciandoAventura/Pergunta5/Imagem1.png",
         multiplasAlternativas: false,
         respostas: [
           {
@@ -242,66 +247,77 @@ const portos = [
       //pergunta 1
       {
         descricao: "Você consegue perceber qual destes animais mais se repete?",
-        imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/imagem-porto4.png",
+        imagem:
+          "./imagens_das_perguntas/PortoAventuraEstatistica/imagem-porto4.png",
         multiplasAlternativas: false,
         respostas: [
           {
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy (2).png",
+            imagem:
+              "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy (2).png",
             correta: false,
           },
           {
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy (3).png",
+            imagem:
+              "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy (3).png",
             correta: true,
           },
           {
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy.png",
+            imagem:
+              "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy.png",
             correta: false,
           },
           {
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4.png",
+            imagem:
+              "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4.png",
             correta: false,
           },
           {
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto41.png",
+            imagem:
+              "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto41.png",
             correta: false,
           },
-
         ],
       },
       //pergunta 2
       {
         descricao: "Você consegue ver qual destes animais menos se repete?",
-        imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/imagem-porto4.png",
+        imagem:
+          "./imagens_das_perguntas/PortoAventuraEstatistica/imagem-porto4.png",
         multiplasAlternativas: false,
         respostas: [
           {
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy (2).png",
+            imagem:
+              "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy (2).png",
             correta: false,
           },
           {
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy (3).png",
+            imagem:
+              "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy (3).png",
             correta: false,
           },
           {
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy.png",
+            imagem:
+              "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy.png",
             correta: false,
           },
           {
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4.png",
+            imagem:
+              "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4.png",
             correta: true,
           },
           {
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto41.png",
+            imagem:
+              "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto41.png",
             correta: false,
           },
         ],
@@ -309,32 +325,38 @@ const portos = [
       //pergunta 3
       {
         descricao: "Algum deles repetiu o mesmo tanto de vezes?",
-        imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/imagem-porto4.png",
+        imagem:
+          "./imagens_das_perguntas/PortoAventuraEstatistica/imagem-porto4.png",
         multiplasAlternativas: true,
         respostas: [
           {
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy (2).png",
+            imagem:
+              "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy (2).png",
             correta: true,
           },
           {
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy (3).png",
+            imagem:
+              "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy (3).png",
             correta: false,
           },
           {
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy.png",
+            imagem:
+              "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4 - Copy.png",
             correta: false,
           },
           {
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4.png",
+            imagem:
+              "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto4.png",
             correta: false,
           },
           {
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto41.png",
+            imagem:
+              "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta1/imagem-porto41.png",
             correta: true,
           },
         ],
@@ -449,7 +471,8 @@ const portos = [
       {
         descricao:
           "O jogador deve quantificar a escolha anterior, comparando o total de animais selecionados aos números dispostos, clicando na  bolha da alternativa correta. (De 3 a 5 animais; De 6 a 9 animais; De 8 a 10 animais.)",
-        imagem: "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta5/imagem-porto6-pergunta2.png",
+        imagem:
+          "./imagens_das_perguntas/PortoAventuraEstatistica/pergunta5/imagem-porto6-pergunta2.png",
         multiplasAlternativas: false,
         respostas: [
           {
@@ -522,7 +545,6 @@ const portos = [
               "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta1/alternativa5/imagem-porto8-alternativa5.png",
             correta: true,
           },
-
         ],
       },
       //pergunta 2
@@ -595,7 +617,6 @@ const portos = [
               "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta3/alternativa5/imagem-porto9 - Copy (2).png",
             correta: true,
           },
-
         ],
       },
       //pergunta 4
@@ -641,78 +662,87 @@ const portos = [
               "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta5/alternativa5/imagem-porto9-alternativa2 - Copy (5).png",
             correta: false,
           },
-
         ],
       },
       //pergunta 5
       {
         descricao:
           "Os Guardiões Marinhos/O Super Leminho recolheram alguns materiais do fundo do mar. Observe e diga qual é a quantidade total em quilogramas dos meses de julho, agosto e setembro. Marque a resposta mais próxima:",
-        imagem: "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta6/imagem-porto11.png",
+        imagem:
+          "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta6/imagem-porto11.png",
         multiplasAlternativas: false,
         respostas: [
           {
             //alternativa1
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta6/alternativa.png",
+            imagem:
+              "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta6/alternativa.png",
             correta: false,
           },
           {
             //alternativa2
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta6/alternativa2.png",
+            imagem:
+              "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta6/alternativa2.png",
             correta: true,
           },
           {
             //alternativa3
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta6/alternativa3.png",
+            imagem:
+              "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta6/alternativa3.png",
             correta: false,
           },
           {
             //alternativa4
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta6/alternativa4.png",
+            imagem:
+              "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta6/alternativa4.png",
             correta: false,
-          }
+          },
         ],
       },
       //pergunta 6
       {
         descricao:
           "Qual destes meses representa a mediana entre os números informados?",
-        imagem: "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta7/imagem-porto12.png",
+        imagem:
+          "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta7/imagem-porto12.png",
         multiplasAlternativas: false,
         respostas: [
           {
             //alternativas
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta7/alternativa.png",
+            imagem:
+              "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta7/alternativa.png",
             correta: false,
           },
           {
             //alternativas
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta7/alternativa2.png",
+            imagem:
+              "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta7/alternativa2.png",
             correta: true,
           },
           {
             //alternativas
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta7/alternativa3.png",
+            imagem:
+              "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta7/alternativa3.png",
             correta: false,
           },
           {
             //alternativas
             descricao: "",
-            imagem: "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta7/alternativa4.png",
+            imagem:
+              "./imagens_das_perguntas/PortoAvancandoNaEstatistica/pergunta7/alternativa4.png",
             correta: false,
           },
         ],
       },
     ],
   },
-  /*
+
   {
     //porto10
     nome: "Porto 10",
@@ -820,8 +850,9 @@ const portos = [
         ],
       },
     ],
-  }, 
-  
+  },
+
+  /*
   {
     //porto11
     nome: "Porto 11",
